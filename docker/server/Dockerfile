@@ -42,5 +42,6 @@ USER www-data
 
 # Copy source files
 COPY --chown=www-data:www-data . /var/www/html
+RUN composer install --no-plugins --no-scripts
 
 USER root

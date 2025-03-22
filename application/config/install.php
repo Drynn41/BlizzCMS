@@ -9,4 +9,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Config directly related to the status of the CMS installation.
 |
 */
-$config['installation_active'] = getenv('BLIZZ_CMS_INSTALL');
+$config['installation_active'] = filter_var(getenv('BLIZZ_CMS_INSTALL') ?: true, FILTER_VALIDATE_BOOLEAN);
